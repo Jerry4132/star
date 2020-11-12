@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>星火背景</title>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #2D2D2D;
+			min-height: 98vh;
+		}
+
+		/* 设置背景样式 */
+		div#bgDIV {
+			width: 100vw;
+			height: 98vh;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 0;
+		}
+
+		section {
+			width: 1000px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 1;
+		}
+
+		span {
+			display: block;
+			width: 100%;
+			height: 300px;
+			line-height: 300px;
+			background-color: teal;
+			margin: 20px 0;
+			text-align: center;
+			font-size: 30px;
+			color: wheat;
+		}
+
+		span:nth-of-type(3) {
+			height: 300px;
+			background-color: transparent;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 背景div -->
+	<div id="bgDIV"></div>
+	<section>
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+	</section>
+</body>
+<!-- 背景脚本 -->
+<script src="./myBG.js"></script>
+<script>
+	// 创建对象
+	// 可选参数{
+	//     // 点的信息
+	//     ball_w: 2,    // 宽
+	//     ball_h: 2,    // 高
+	//     ball_color: '0, 117, 183',    // 颜色
+	//     ball_count: 200,    // 数量
+	//     // 线的信息
+	//     line_color: '35, 171, 242',    // 颜色
+	//     line_dist: 10000,    // 连线距离（实际距离的平方值）
+	//     line_conn: 10,    // 数量
+	//     // 鼠标的信息
+	//     e_dist: 16000    // 鼠标吸附加速距离（实际距离的平方值）
+	// }
+	const background = new MyBg({ faBoxId: 'bgDIV' });
+	background.CanvasInit();
+</script>
+
+</html>
